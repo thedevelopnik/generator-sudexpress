@@ -13,4 +13,4 @@ A personalized version of the [Galvanize Express Generator](https://www.npmjs.co
 1. Fire up the server - `gulp` (or create a build - `gulp build`)
 
 
-^*Copyright (c) 2016, Michael Herman michael@mherman.org^
+*Copyright (c) 2016, Michael Herman michael@mherman.org
