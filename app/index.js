@@ -3,7 +3,7 @@ var path = require('path');
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 
-var SudexpressGenerator = yeoman.generators.Base.extend({
+var SudexpressGenerator = yeoman.Base.extend({
 
   promptUser: function() {
     // greeting
