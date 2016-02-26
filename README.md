@@ -1,7 +1,8 @@
 # generator-sudexpress
 
-A personalized version of the [Galvanize Express Generator](https://www.npmjs.com/package/generator-galvanize-express) made by [Michael Herman](http://mherman.org/). Copyright (c) 2016, Michael Herman michael@mherman.org
-[Yeoman](http://yeoman.io) generator for a basic Node/Express boilerplate.
+A personalized version of the [Galvanize Express Generator](https://www.npmjs.com/package/generator-galvanize-express) made by [Michael Herman](http://mherman.org/)*.
+
+[Yeoman](http://yeoman.io) generator for a basic Node/Express boilerplate setup for PostgreSQL.
 
 ## Quick Start
 
@@ -10,3 +11,6 @@ A personalized version of the [Galvanize Express Generator](https://www.npmjs.co
 1. Run - `yo sudexpress`
 1. Install modules - `npm install`
 1. Fire up the server - `gulp` (or create a build - `gulp build`)
+
+
+^*Copyright (c) 2016, Michael Herman michael@mherman.org^
