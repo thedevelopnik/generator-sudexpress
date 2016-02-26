@@ -13,6 +13,7 @@ var cleanCSS = require('gulp-clean-css');
 var clean = require('gulp-rimraf');
 var concat = require('gulp-concat');
 var runSequence = require('run-sequence');
+var pg = require('pg');
 
 
 /**
