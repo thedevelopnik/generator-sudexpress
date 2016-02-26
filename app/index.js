@@ -7,7 +7,7 @@ var GalvanizeExpreessGenerator = yeoman.generators.Base.extend({
 
   promptUser: function() {
     // greeting
-    console.log(chalk.magenta("Welcome to Galvanize's Node/Express Generator"));
+    console.log(chalk.magenta("Welcome to Dave Sudia's Node/Express Generator"));
   },
 
   createApp: function(){
