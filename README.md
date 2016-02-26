@@ -1,6 +1,6 @@
 # generator-sudexpress
 
-A personalized version of the [Galvanize Express Generator](https://www.npmjs.com/package/generator-galvanize-express) made by [Michael Herman](http://mherman.org/).
+A personalized version of the [Galvanize Express Generator](https://www.npmjs.com/package/generator-galvanize-express) made by [Michael Herman](http://mherman.org/). Copyright (c) 2016, Michael Herman michael@mherman.org
 [Yeoman](http://yeoman.io) generator for a basic Node/Express boilerplate.
 
 ## Quick Start
