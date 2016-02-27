@@ -15,6 +15,7 @@
     "swig": "^1.4.2",
     "pg": "4.5.1",
     "pg-escape": "^0.2.0"
+    "bluebird": "^3.3.3"
   },
   "devDependencies": {
     "browser-sync": "2.11.1",
