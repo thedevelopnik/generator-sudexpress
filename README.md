@@ -11,6 +11,7 @@ A personalized version of the [Galvanize Express Generator](https://www.npmjs.co
 1. Run - `yo sudexpress`
 1. Install modules - `npm install`
 1. Fire up the server - `gulp` (or create a build - `gulp build`)
+1. If you want to use dotenv, you will need to create your own .env file. .env is already in .gitignore.
 
 
 *Copyright (c) 2016, Michael Herman michael@mherman.org
