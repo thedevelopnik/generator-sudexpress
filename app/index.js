@@ -12,6 +12,7 @@ var SudexpressGenerator = yeoman.Base.extend({
 
   createApp: function(){
     this.copy('./src/client/js/main.js', './src/client/js/main.js');
+    this.copy('./src/client/js/bundle.js', '/src/client/js/bundle.js');
     this.copy('./src/client/css/main.css', './src/client/css/main.css');
     this.copy('./src/server/bin/www', './src/server/bin/www');
     this.copy('./src/server/routes/index.js', './src/server/routes/index.js');
@@ -22,6 +23,7 @@ var SudexpressGenerator = yeoman.Base.extend({
     this.copy('package.json');
     this.copy('_gitignore', '.gitignore');
     this.copy('gulpfile.js', 'gulpfile.js');
+    this.copy('./test/tests.spec.js', './test/tests.spec.js');
   },
 
 });

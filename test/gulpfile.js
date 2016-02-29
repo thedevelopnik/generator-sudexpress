@@ -3,12 +3,12 @@
  */
 
 var gulp = require('gulp');
-var babel = require('gulp-babel');
 var jshint = require('gulp-jshint');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var nodemon = require('gulp-nodemon');
 var connect = require('gulp-connect');
+var uglify = require('gulp-uglify');
 var cleanCSS = require('gulp-clean-css');
 var clean = require('gulp-rimraf');
 var concat = require('gulp-concat');
@@ -51,21 +51,6 @@ var nodemonDistConfig = {
 /**
  * Gulp Tasks
  */
-
-gulp.task('babel', function () {
-	return gulp.src('src/client/js/build.js')
-		.pipe(babel({
-			presets: ['es2015']
-		}))
-		.pipe(gulp.dest('./dist/client/js/'));
-});
-
-gulp.task('browserify', function() {
-  return browserify('./src/client/js/main.js')
-    .bundle()
-    //Pass desired output filename to vinyl-source-stream
-    .pipe(source('./src/client/js/bundle.js'));
-});
 
 gulp.task('lint', function() {
   return gulp.src(paths.scripts)
@@ -113,6 +98,12 @@ gulp.task('minify-css', function() {
     .pipe(gulp.dest('./dist/client/css/'));
 });
 
+gulp.task('minify-js', function() {
+  gulp.src(paths.scripts)
+    .pipe(uglify())
+    .pipe(gulp.dest('./dist/client/js/'));
+});
+
 gulp.task('copy-server-files', function () {
   gulp.src('./src/server/**/*')
     .pipe(gulp.dest('./dist/server/'));
@@ -143,6 +134,6 @@ gulp.task('default', ['browser-sync', 'watch'], function(){});
 gulp.task('build', function() {
   runSequence(
     ['clean'],
-    ['lint', 'browserify', 'clean-css', 'babel', 'copy-server-files', 'connectDist']
+    ['lint', 'clean-css', 'minify-js', 'copy-server-files', 'connectDist']
   );
 });
