@@ -10,7 +10,6 @@
     "bluebird": "^3.3.3",
     "cookie-parser": "~1.4.1",
     "debug": "~2.2.0",
-    "dotenv": "^2.0.0",
     "express": "~4.13.4",
     "knex": "^0.10.0",
     "morgan": "~1.7.0",

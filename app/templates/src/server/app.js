@@ -7,7 +7,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var swig = require('swig');
 var Promise = require('bluebird');
-var knex = require('knex');
 
 
 // *** routes *** //
