@@ -24,7 +24,6 @@ var SudexpressGenerator = yeoman.Base.extend({
     this.copy('_gitignore', '.gitignore');
     this.copy('gulpfile.js', 'gulpfile.js');
     this.copy('./test/tests.spec.js', './test/tests.spec.js');
-    // Changed where the files are located and where to put them
     this.copy('./db/knex.js', './db/knex.js');
     this.copy('knexfile.js', 'knexfile.js');
   },
