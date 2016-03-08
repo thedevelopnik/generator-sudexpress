@@ -15,6 +15,8 @@ It uses Gulp for local development and builds. Builds use:
 * JSHint for linting
 * Browser-sync for local development
 
+On the client-side, it includes Bootstrap and jQuery.
+
 
 ## Quick Start
 

@@ -6,9 +6,15 @@ var chalk = require('chalk');
 var SudexpressGenerator = yeoman.Base.extend({
 
   promptUser: function() {
+
+    var done = this.async();
+
     // greeting
     console.log(chalk.magenta("Welcome to Dave Sudia's Node/Express Generator"));
+
   },
+
+
 
   createApp: function(){
     this.copy('./src/client/js/main.js', './src/client/js/main.js');
