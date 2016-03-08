@@ -1,6 +1,6 @@
 {
-  "name": "_example",
-  "version": "0.0.0",
+  "name": "node app",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "start": "node ./src/server/bin/www"
@@ -8,14 +8,16 @@
   "dependencies": {
     "body-parser": "~1.15.0",
     "bluebird": "^3.3.3",
+    "chai": "^3.5.0",
+    "chai-http": "^2.0.1",
     "cookie-parser": "~1.4.1",
     "debug": "~2.2.0",
     "express": "~4.13.4",
     "knex": "^0.10.0",
+    "lodash": "^4.5.1",
+    "mocha": "^2.4.5",
     "morgan": "~1.7.0",
     "pg": "^4.5.1",
-    "pg-escape": "^0.2.0",
-    "pg-promise": "^3.2.6",
     "serve-favicon": "~2.3.0",
     "swig": "^1.4.2"
   },
@@ -33,7 +35,6 @@
     "gulp-clean-css": "^2.0.2",
     "gulp-nodemon": "^2.0.6",
     "jshint-stylish": "^2.1.0",
-    "lodash": "^4.5.1",
     "run-sequence": "^1.1.5"
   }
 }
