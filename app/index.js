@@ -28,6 +28,7 @@ var SudexpressGenerator = yeoman.Base.extend({
     this.copy('./test/index.html', './test/index.html');
     this.copy('./db/knex.js', './db/knex.js');
     this.copy('knexfile.js', 'knexfile.js');
+    this.copy('.env', '.env');
   },
 
 });

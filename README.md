@@ -24,7 +24,6 @@ On the client-side, it includes Bootstrap and jQuery.
 1. Install the generator - `npm install -g generator-sudexpress`
 1. Run - `yo sudexpress`
 1. Install modules - `npm install`
-1. Install lodash - 'npm install lodash --save' (This is due to a current bug where lodash does not install correctly first time. Working on fixing this.)
 1. Fire up the server - `gulp` (or create a build - `gulp build`)
 
 
