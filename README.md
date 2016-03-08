@@ -24,7 +24,6 @@ It uses Gulp for local development and builds. Builds use:
 1. Install modules - `npm install`
 1. Install lodash - 'npm install lodash --save' (This is due to a current bug where lodash does not install correctly first time. Working on fixing this.)
 1. Fire up the server - `gulp` (or create a build - `gulp build`)
-1. If you want to use dotenv, you will need to create your own .env file. .env is already in .gitignore.
 
 
 
