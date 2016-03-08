@@ -1,11 +1,3 @@
-module.exports = {
-  development: {
-    client: 'pg',
-    connection: 'postgres://localhost:5432/YOUR_DATABASE'
-  },
-
-  deployment: {
-    client: 'pg',
-    connection: 'postgres://'
-  }
-};
+var environment = 'deployment' || 'development';
+var config = require('../knexfile')[environment];
+module.exports = require('knex')(config);
