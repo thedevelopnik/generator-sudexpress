@@ -2,7 +2,6 @@
  * Module Dependencies
  */
 
-require('dotenv').config();
 var gulp = require('gulp');
 var babel = require('gulp-babel');
 var jshint = require('gulp-jshint');

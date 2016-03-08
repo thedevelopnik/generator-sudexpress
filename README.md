@@ -2,7 +2,7 @@
 
 An updated version of the [Galvanize Express Generator](https://www.npmjs.com/package/generator-galvanize-express) made by [Michael Herman](http://mherman.org/)*.
 
-[Yeoman](http://yeoman.io) generator for a Node/Express boilerplate setup for PostgreSQL, using the following modules:
+[Yeoman](http://yeoman.io) generator for a Node/Express boilerplate setup with PostgreSQL, using the following modules (for more details look at the package.json in app/templates):
 
 * Bluebird for Promises
 * Mocha for testing, chai for assertions, and chai-http for server-side testing
