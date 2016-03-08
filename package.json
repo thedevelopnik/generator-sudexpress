@@ -1,6 +1,6 @@
 {
   "name": "generator-sudexpress",
-  "version": "0.3.15",
+  "version": "0.3.16",
   "description": "Yeoman generator for a basic Node/Express app including PostgreSQL.",
   "author": "David Sudia",
   "license": "ISC",
