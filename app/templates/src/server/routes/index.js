@@ -4,6 +4,7 @@ var pg = require('pg');
 var knex = require('../../../db/knex');
 var passport = require('../lib/auth');
 var bcrypt = require('bcrypt');
+var helpers = require('../lib/helpers');
 
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });

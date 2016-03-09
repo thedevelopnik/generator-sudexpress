@@ -1,6 +1,7 @@
 var passport = require('passport');
 var LocalStrategy = require('passport-local');
 var knex = require('../../../db/knex');
+var helpers = require('./helpers');
 
 
 passport.use(new LocalStrategy({
