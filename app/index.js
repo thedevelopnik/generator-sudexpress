@@ -21,6 +21,7 @@ var SudexpressGenerator = yeoman.Base.extend({
     this.copy('./src/server/views/layout.html', './src/server/views/layout.html');
     this.copy('./src/server/app.js', './src/server/app.js');
     this.copy('package.json');
+    this.copy('.env', '.env');
     this.copy('_gitignore', '.gitignore');
     this.copy('gulpfile.js', 'gulpfile.js');
     this.copy('./test/clientTests.spec.js', './test/clientTests.spec.js');
@@ -28,7 +29,8 @@ var SudexpressGenerator = yeoman.Base.extend({
     this.copy('./test/index.html', './test/index.html');
     this.copy('./db/knex.js', './db/knex.js');
     this.copy('knexfile.js', 'knexfile.js');
-    this.copy('.env', '.env');
+    this.copy('./.env', './.env');
+    this.copy('./src/server/lib/auth.js', './src/server/lib/auth.js');
   },
 
 });

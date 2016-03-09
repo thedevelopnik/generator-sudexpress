@@ -1,3 +1,3 @@
-var environment = 'deployment' || 'development';
-var config = require('../knexfile.js')[environment];
+var environment = 'development' || 'production';
+var config = require('../knexfile')[environment];
 module.exports = require('knex')(config);
