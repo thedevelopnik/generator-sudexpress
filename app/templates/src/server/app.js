@@ -10,7 +10,7 @@ var swig = require('swig');
 var flash = require('connect-flash');
 var session = require('express-session');
 var Promise = require('bluebird');
-var passport = require('./lib/auth');
+var passport = require('./lib/passport');
 var knex = require('../../db/knex');
 var cookieSession = require('cookie-session');
 

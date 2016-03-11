@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var pg = require('pg');
 var knex = require('../../../db/knex');
-var passport = require('../lib/auth');
+var passport = require('../lib/passport');
 var bcrypt = require('bcrypt');
 var helpers = require('../lib/helpers');
 
