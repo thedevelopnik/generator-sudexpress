@@ -30,7 +30,7 @@ var SudexpressGenerator = yeoman.Base.extend({
     this.copy('./db/knex.js', './db/knex.js');
     this.copy('knexfile.js', 'knexfile.js');
     this.copy('./.env', './.env');
-    this.copy('./src/server/lib/passport.js', './src/server/lib/passport.js');
+    this.copy('./src/server/lib/helpers.js', './src/server/lib/helpers.js');
     this.copy('./src/server/lib/passport.js', './src/server/lib/passport.js');
   },
 
