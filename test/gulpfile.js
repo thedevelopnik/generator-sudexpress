@@ -2,18 +2,20 @@
  * Module Dependencies
  */
 
+var browserify = require('browserify');
 var gulp = require('gulp');
+var babel = require('gulp-babel');
 var jshint = require('gulp-jshint');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var nodemon = require('gulp-nodemon');
 var connect = require('gulp-connect');
-var uglify = require('gulp-uglify');
 var cleanCSS = require('gulp-clean-css');
 var clean = require('gulp-rimraf');
 var concat = require('gulp-concat');
 var runSequence = require('run-sequence');
 var Promise = require('bluebird');
+var source = require('vinyl-source-stream');
 
 
 /**
@@ -52,6 +54,21 @@ var nodemonDistConfig = {
  * Gulp Tasks
  */
 
+gulp.task('babel', function () {
+	return gulp.src('./src/client/js/bundle.js')
+		.pipe(babel({
+			presets: ['es2015']
+		}))
+		.pipe(gulp.dest('./dist/client/js/'));
+});
+
+gulp.task('browserify', function() {
+  var brify = browserify('./src/client/js/main.js');
+  brify.bundle()
+    .pipe(source('bundle.js'))
+    .pipe(gulp.dest('./src/client/js/'));
+});
+
 gulp.task('lint', function() {
   return gulp.src(paths.scripts)
     .pipe(jshint())
@@ -88,7 +105,7 @@ gulp.task('watch', function() {
 
 gulp.task('clean', function() {
   return gulp.src('./dist/*')
-    .pipe(rimraf({force: true}));
+    .pipe(clean({force: true}));
 });
 
 gulp.task('minify-css', function() {
@@ -96,12 +113,6 @@ gulp.task('minify-css', function() {
   return gulp.src(paths.styles)
     .pipe(cleanCSS(opts))
     .pipe(gulp.dest('./dist/client/css/'));
-});
-
-gulp.task('minify-js', function() {
-  gulp.src(paths.scripts)
-    .pipe(uglify())
-    .pipe(gulp.dest('./dist/client/js/'));
 });
 
 gulp.task('copy-server-files', function () {
@@ -133,7 +144,10 @@ gulp.task('default', ['browser-sync', 'watch'], function(){});
 // *** build task *** //
 gulp.task('build', function() {
   runSequence(
-    ['clean'],
-    ['lint', 'clean-css', 'minify-js', 'copy-server-files', 'connectDist']
-  );
+    'clean',
+    'lint',
+    'browserify',
+    'babel',
+    'minify-css',
+    'copy-server-files');
 });

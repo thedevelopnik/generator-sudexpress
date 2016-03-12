@@ -2,6 +2,7 @@
  * Module Dependencies
  */
 
+var browserify = require('browserify');
 var gulp = require('gulp');
 var babel = require('gulp-babel');
 var jshint = require('gulp-jshint');
@@ -14,6 +15,7 @@ var clean = require('gulp-rimraf');
 var concat = require('gulp-concat');
 var runSequence = require('run-sequence');
 var Promise = require('bluebird');
+var source = require('vinyl-source-stream');
 
 
 /**
@@ -53,7 +55,7 @@ var nodemonDistConfig = {
  */
 
 gulp.task('babel', function () {
-	return gulp.src('src/client/js/build.js')
+	return gulp.src('./src/client/js/bundle.js')
 		.pipe(babel({
 			presets: ['es2015']
 		}))
@@ -61,10 +63,10 @@ gulp.task('babel', function () {
 });
 
 gulp.task('browserify', function() {
-  return browserify('./src/client/js/main.js')
-    .bundle()
-    //Pass desired output filename to vinyl-source-stream
-    .pipe(source('./src/client/js/bundle.js'));
+  var brify = browserify('./src/client/js/main.js');
+  brify.bundle()
+    .pipe(source('bundle.js'))
+    .pipe(gulp.dest('./src/client/js/'));
 });
 
 gulp.task('lint', function() {
@@ -142,7 +144,10 @@ gulp.task('default', ['browser-sync', 'watch'], function(){});
 // *** build task *** //
 gulp.task('build', function() {
   runSequence(
-    ['clean'],
-    ['lint', 'browserify', 'babel', 'minify-css', 'copy-server-files', 'connectDist']
-  );
+    'clean',
+    'lint',
+    'browserify',
+    'babel',
+    'minify-css',
+    'copy-server-files');
 });
