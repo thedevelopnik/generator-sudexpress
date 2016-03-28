@@ -9,6 +9,8 @@
     "bcrypt": "^0.8.5",
     "bluebird": "^3.3.3",
     "body-parser": "~1.15.0",
+    "bourbon": "4.2.6",
+    "bourbon-neat": "1.7.4",
     "chai": "^3.5.0",
     "chai-http": "^2.0.1",
     "connect-flash": "^0.1.1",

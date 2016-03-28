@@ -14,28 +14,30 @@ var cleanCSS = require('gulp-clean-css');
 var clean = require('gulp-rimraf');
 var concat = require('gulp-concat');
 var runSequence = require('run-sequence');
+var sass = require('gulp-sass');
 var Promise = require('bluebird');
 var source = require('vinyl-source-stream');
 
 
 /**
+ * Bourbon & Neat
+ */
+
+var bourbonPaths = require('bourbon').includePaths;
+var neatPaths = require('bourbon-neat').includePaths;
+
+/**
  * Config
  */
 
-var paths = {
-  styles: [
-    './src/client/css/*.css',
-  ],
-  scripts: [
-    './src/client/js/*.js',
-  ],
-  server: [
-    './src/server/bin/www'
-  ],
-  distServer: [
-    './dist/server/bin/www'
-  ]
-};
+ var paths = {
+   css: './src/client/styles/**/*.css',
+   scss: ['./src/client/styles/scss/*.scss',
+          './src/client/styles/scss/**/*.scss'],
+   scripts: './src/client/js/*.js',
+   server: './src/server/bin/www',
+   distServer: './dist/server/bin/www',
+ };
 
 var nodemonConfig = {
   script: paths.server,
@@ -106,6 +108,18 @@ gulp.task('watch', function() {
 gulp.task('clean', function() {
   return gulp.src('./dist/*')
     .pipe(clean({force: true}));
+});
+
+gulp.task('sass', function () {
+  return gulp.src(paths.scss)
+    .pipe(sass({
+      includePaths: ['styles'].concat(bourbonPaths, neatPaths)
+    }).on('error', sass.logError))
+    .pipe(gulp.dest('./src/client/styles/css'));
+});
+
+gulp.task('sass:watch', function () {
+  gulp.watch(paths.scss[1], ['sass']);
 });
 
 gulp.task('minify-css', function() {
