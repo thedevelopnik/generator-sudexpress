@@ -13,7 +13,8 @@ var SudexpressGenerator = yeoman.Base.extend({
   createApp: function(){
     this.copy('./src/client/js/main.js', './src/client/js/main.js');
     this.copy('./src/client/js/bundle.js', './src/client/js/bundle.js');
-    this.copy('./src/client/css/main.css', './src/client/css/main.css');
+    this.copy('./src/client/styles/css/main.css', './src/client/styles/css/main.css');
+    this.copy('./src/client/styles/scss/main.scss', './src/client/styles/scss/main.scss');
     this.copy('./src/server/bin/www', './src/server/bin/www');
     this.copy('./src/server/routes/index.js', './src/server/routes/index.js');
     this.copy('./src/server/views/error.html', './src/server/views/error.html');
