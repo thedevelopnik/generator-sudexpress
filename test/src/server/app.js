@@ -1,5 +1,5 @@
 // *** main dependencies *** //
-require('dotenv').config();
+if ( !process.env.NODE_ENV ) { require('dotenv').config(); }
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -47,19 +47,6 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
-// *** configure passport *** //
-passport.serializeUser(function(user, done) {
-  done(null, user.id);
-});
-
-passport.deserializeUser(function(id, done) {
-  knex('users').where('id', id)
-    .then(function(data) {
-      return done(null, data[0]);
-    }).catch(function(err) {
-      return done(err, null);
-    });
-});
 
 // *** main routes *** //
 app.use('/', routes);
